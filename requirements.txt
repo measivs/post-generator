@@ -1,10 +1,12 @@
-openai
-python-dotenv 
+openai==1.69.0
+python-dotenv==1.0.0
 Django==4.2.0
 djangorestframework==3.14.0
 psycopg2-binary==2.9.6
-langchain==0.0.200
 whitenoise==6.4.0
 djangorestframework-simplejwt==5.3.1
-djangorestframework==3.14.0
 drf-yasg==1.21.7
+
+langchain-openai==0.0.5
+langchain-core==0.1.21
+langchain==0.1.0
