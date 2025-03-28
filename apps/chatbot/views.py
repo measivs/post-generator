@@ -2,7 +2,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import GenericAPIView
-from django.shortcuts import get_object_or_404
 from .models import Session, Chat
 from .serializers import ChatMessageSerializer
 from .post_generator import generate_response
@@ -46,7 +45,6 @@ class ChatbotView(GenericAPIView):
         last_bot_message = Chat.objects.filter(session=session, sender="bot").last()
         last_user_message = Chat.objects.filter(session=session, sender="user").last()
 
-        # Save raw user input exactly as received
         user_chat = Chat.objects.create(
             session=session,
             sender="user",
