@@ -22,6 +22,7 @@ class Chat(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name="chats")
     sender = models.CharField(max_length=10, choices=[('user', 'User'), ('bot', 'Bot')])
     message = models.TextField()
+    generated_content = models.TextField(blank=True, null=True)
     timestamp = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
