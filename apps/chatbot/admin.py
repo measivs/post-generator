@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Session, Chat
-# Register your models here.
 
 @admin.register(Session)
 class SessionAdmin(admin.ModelAdmin):
@@ -10,6 +9,6 @@ class SessionAdmin(admin.ModelAdmin):
 
 @admin.register(Chat)
 class ChatAdmin(admin.ModelAdmin):
-    list_display = ('id', 'session', 'sender', 'message', 'timestamp')
+    list_display = ('id', 'session', 'sender', 'message', 'generated_content', 'timestamp')
     list_filter = ('session', 'sender')
-    search_fields = ('session', 'sender', 'message')
+    search_fields = ('session', 'sender', 'message', 'generated_content')
