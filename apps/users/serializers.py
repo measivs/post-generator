@@ -32,6 +32,14 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return CustomUser.objects.create_user(**validated_data)
+    
+
+class VerifyAccountSerializer(serializers.Serializer):
+    """
+    Serializer for account verification.
+    No fields needed as we just use the JWT token.
+    """
+    pass
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
