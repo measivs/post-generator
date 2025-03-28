@@ -20,15 +20,6 @@ User = get_user_model()
 class RegisterUserView(GenericAPIView):
     """
     A view for user registration.
-
-    Allows new users to register by providing necessary details
-    and stores their information in the database.
-
-    Permissions:
-        - Publicly accessible.
-
-    POST:
-        - Registers a new user.
     """
     permission_classes = (AllowAny,)
     serializer_class = UserRegistrationSerializer
@@ -38,12 +29,13 @@ class RegisterUserView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
-        refresh = RefreshToken.for_user(user)
+        # Only issue access token on registration, not the refresh token
+        access_token = RefreshToken.for_user(user).access_token
 
         return Response({
             'user_id': user.id,
-            'access': str(refresh.access_token),
-            'refresh': str(refresh)
+            'access': str(access_token),
+            'message': 'Registration successful. Please verify your email to complete the process.'
         }, status=status.HTTP_201_CREATED)
     
 
