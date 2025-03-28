@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyo
+
+# Virtual environments
+.env/
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Django stuff
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Docker
+*.db
+*.pid
+*.log
+*.tar
+*.bak
+docker-compose.override.yml
+.env  # Your environment file with secrets (database credentials, etc.)
+
+# Editor files (optional, for VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Migrations compiled files
+*.pyc
+*.pyo
+
+# Cache files
+__pycache__/
+
+# Node (if you're using frontend stuff inside your project)
+node_modules/
+
+# Ignore compiled Python files
+*.pyc
+*.pyd
+*.pyo
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore celery beat schedule file
+celerybeat-schedule
+
+# Ignore system files (Windows/Mac)
+.DS_Store
+Thumbs.db
+
+# Ignore compiled Docker images
+*.tar
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
