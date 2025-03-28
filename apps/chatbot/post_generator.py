@@ -2,7 +2,6 @@ from langchain_openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import os
-import re
 
 
 llm = OpenAI(
